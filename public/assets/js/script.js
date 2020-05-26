@@ -1,18 +1,17 @@
 $(document).ready(function() {
     
   $(".devour-form").on("submit", function(event) {
-
+event.preventDefault();
+var burgerId= $(this).children(".burger_id").val()
     
-
-
-
 
     //hint:setting up ajax put
     
-    $.ajax("/api/burgers/" + id, {
+    $.ajax({
+      url:"/api/burgers/" + burgerId, 
       type: "PUT",
-      data: ""
-    }).then(function() {
+      
+    }).then(function(data) {
 
         location.reload();
       
