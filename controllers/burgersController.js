@@ -21,10 +21,32 @@ router.get("/burgers", function(req, res) {
 
 // post route -> back to index
   //hint: burger.create
-
+  router.post("/burgers", function(req, res) {
+    res.redirect("burgers"); 
+    });
+  
+  router.post("/burgers", function(req,res) {
+    burger.create(function(data) 
+    {var hbsObject = { burgers:data
+    };
+    res.render("index", hbrObject);
+  }
+    )
+  });
 
 // put route -> back to index
   //hint: burger.update()
+  router.put("/burgers", function(req, res) {
+    res.redirect("burgers", function(req, res)
+    
+  });
 
-
+  router.post("/burgers", function(req,res) {
+    burger.update(function(data) 
+    {var hbsObject = { burgers:data
+    };
+    res.render("index", hbrObject);
+  }
+    )
+  });
 module.exports = router;
