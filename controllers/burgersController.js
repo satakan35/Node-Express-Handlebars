@@ -36,15 +36,16 @@ router.get("/burgers", function(req, res) {
 
 // put route -> back to index
   //hint: burger.update()
-  router.put("/", function(req, res) {
-    res.redirect("/burgers");
+  // router.put("/", function(req, res) {
+  //   res.redirect("/burgers");
 
-  router.put("/burgers", function(req, res) {
-    burger.update(function(data) 
-    {var hbsObject = {
-      burgers: data
-    };
-    res.render("index", hbrObject);
-  });
-  });
+  // router.put("/burgers", function(req, res) {
+  //   burger.update(function(data) 
+  //   {var hbsObject = {
+  //     burgers: data
+  //   };
+  //   res.render("index", hbrObject);
+  // });
+  // });
+  
 module.exports = router;
