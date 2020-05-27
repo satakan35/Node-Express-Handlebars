@@ -13,11 +13,9 @@ var burger = {
     });
     //hint:orm.create()
   },
-  update: function(objColVals, condition, cb) {
-    // var condition = "id=" + id;
-    orm.update("burgers", objColVals, condition, function(res) {
-      cb(res);
-    });
+  update: function(id, cb) {
+     var condition = "id=" + id;
+    orm.update("burgers", {devoured:true}, condition, cb );
     //hint:orm.update
   }
 };

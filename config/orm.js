@@ -65,12 +65,15 @@ var orm = {
   // objColVals would be the columns and values that you want to update
   // an example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+    var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) +  " WHERE " + condition;
+    //UPDATE burgers SET devoured = true WHERE id = 1
 
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+    // var queryString = "UPDATE " + table;
+
+    // queryString += " SET ";
+    // queryString += objToSql(objColVals);
+    // queryString += " WHERE ";
+    // queryString += condition;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {

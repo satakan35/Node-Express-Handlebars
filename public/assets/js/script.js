@@ -8,7 +8,7 @@ var burgerId= $(this).children(".burger_id").val()
     //hint:setting up ajax put
     
     $.ajax({
-      url:"/api/burgers/" + burgerId, 
+      url:"/burgers/" + burgerId, 
       type: "PUT",
       
     }).then(function(data) {

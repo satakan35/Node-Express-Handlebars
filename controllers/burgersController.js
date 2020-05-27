@@ -30,8 +30,7 @@ router.post("/burgers/create", function (req, res) {
 
 // put route -> back to index
 //hint: burger.update()
-// router.put("/", function(req, res) {
-//   res.redirect("/burgers");
+
 
 router.put("/burgers/:id", function (req, res) {
   burger.update(req.params.id, function (data) {
